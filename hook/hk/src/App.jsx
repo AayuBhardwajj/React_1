@@ -8,11 +8,17 @@ function App() {
   let [counter, setCounter] = useState(0);
 
   function addValue(){
+    if(counter===10){
+      return;
+    }
     setCounter(counter+1);
     
   }
 
    const subValue=()=>{
+    if(counter===0){
+      return;
+    }
     setCounter(counter-1);
   }
   return (
