@@ -40,6 +40,9 @@ function App1(){
   let [counter, setCounter] = useState(0);
 
   const addV = ()=> {
+    if(counter>=10){
+      return;
+    }
     setCounter(counter+1);
     
   }
