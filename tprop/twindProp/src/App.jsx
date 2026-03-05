@@ -5,16 +5,19 @@ import Card3 from './components/Mcard'
 
 
 
-function App() {
 
-  return (
+function NameCard({name, sem, course}){
+  return(
+    <h1>My name is {name}. I am currently in my {sem} of {course} </h1>
+  )
+}
+
+function App(){
+  return(
     <>
-  <h1 className='bg-green-400 text-black'> Hello</h1>
-
-    <Card />
-  <Card3 />
-   </>
+    <NameCard name="Aayush" sem={6} course="CSE" />
+     </>
    
   )
 }
-export default App
+export default App;
