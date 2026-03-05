@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 export default function Card3() {
   return (
     <div className="w-60 flex flex-col rounded-xl bg-black min-h-[19rem] ">
