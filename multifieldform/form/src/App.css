@@ -1,0 +1,123 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.form-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 44px 40px;
+  width: 100%;
+  max-width: 440px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+}
+
+h2 {
+  font-size: 2rem;
+  color: #1a1a2e;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+.subtitle {
+  color: #555555;
+  font-size: 0.95rem;
+  margin-bottom: 32px;
+}
+
+/* ---------- Field ---------- */
+.field {
+  margin-bottom: 22px;
+}
+
+.field label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #1a1a2e;          /* dark, clearly visible */
+  margin-bottom: 7px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.field input {
+  width: 100%;
+  padding: 13px 15px;
+  border: 2px solid #d0d0d0;
+  border-radius: 10px;
+  font-size: 1rem;
+  color: #1a1a2e;          /* dark text in input */
+  background: #f8f9ff;
+  outline: none;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.field input::placeholder {
+  color: #999999;          /* visible placeholder */
+}
+
+.field input:focus {
+  border-color: #0f3460;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(15, 52, 96, 0.12);
+}
+
+.field input.input-error {
+  border-color: #c0392b;
+  background: #fff5f5;
+  box-shadow: 0 0 0 4px rgba(192, 57, 43, 0.1);
+}
+
+/* ---------- Error message ---------- */
+.error {
+  color: #c0392b;          /* red, clearly visible */
+  font-size: 0.82rem;
+  font-weight: 500;
+  margin-top: 6px;
+}
+
+/* ---------- Submit Button ---------- */
+.submit-btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #0f3460 0%, #533483 100%);
+  color: #ffffff;          /* white text on dark button */
+  border: none;
+  border-radius: 10px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 10px;
+  letter-spacing: 0.6px;
+  transition: opacity 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 20px rgba(15, 52, 96, 0.35);
+}
+
+.submit-btn:hover {
+  opacity: 0.92;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(15, 52, 96, 0.4);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 12px rgba(15, 52, 96, 0.3);
+}

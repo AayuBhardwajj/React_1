@@ -1,0 +1,78 @@
+/* Reset */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Page background */
+body{
+  background: linear-gradient(to right, #7b7fd8, #c89dd9);
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container */
+.container{
+  display: grid;
+  grid-template-columns: repeat(3, 220px);
+  gap: 30px;
+}
+
+/* Card */
+.Carrd{
+  height: 180px;          /* increased height */
+  width: 220px;
+  padding: 50px 20px 20px;
+  border-radius: 10px;
+  background: white;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease;
+}
+
+.Carrd:hover{
+  transform: translateY(-5px);
+}
+
+/* Profile image */
+.ph{
+  width: 60px;            /* smaller image */
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  top: -30px;             /* reduced offset */
+  left: 50%;
+  transform: translateX(-50%);
+  border: 4px solid white;
+}
+
+/* Name */
+.Carrd h2{
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Stats */
+.stats{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.stat-number{
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.stat-label{
+  font-size: 12px;
+  color: gray;
+}
