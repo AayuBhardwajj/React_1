@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -5,12 +7,18 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  font-family: 'Outfit', sans-serif;
   min-height: 100vh;
+  background: linear-gradient(120deg, #f6d365 0%, #fda085 40%, #f093fb 80%, #c471ed 100%);
   display: flex;
   align-items: center;
   justify-content: center;
+  animation: bgShift 8s ease infinite alternate;
+}
+
+@keyframes bgShift {
+  0%   { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(30deg); }
 }
 
 .container {
@@ -18,106 +26,130 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  padding: 20px;
+  padding: 24px;
 }
 
+/* ── Glassmorphism Card ── */
 .form-card {
-  background: #ffffff;
-  border-radius: 20px;
-  padding: 44px 40px;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
+  border-radius: 24px;
+  padding: 48px 44px;
   width: 100%;
-  max-width: 440px;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+  max-width: 450px;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255,255,255,0.6);
 }
 
+/* ── Heading ── */
 h2 {
-  font-size: 2rem;
-  color: #1a1a2e;
-  margin-bottom: 6px;
+  font-size: 2.1rem;
   font-weight: 700;
+  color: #1e1e2e;
+  margin-bottom: 6px;
+  text-shadow: 0 1px 2px rgba(255,255,255,0.4);
 }
 
 .subtitle {
-  color: #555555;
-  font-size: 0.95rem;
-  margin-bottom: 32px;
+  font-size: 0.97rem;
+  color: #2e2e3e;
+  font-weight: 400;
+  margin-bottom: 34px;
+  opacity: 0.85;
 }
 
-/* ---------- Field ---------- */
+/* ── Fields ── */
 .field {
-  margin-bottom: 22px;
+  margin-bottom: 24px;
 }
 
 .field label {
   display: block;
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   font-weight: 700;
-  color: #1a1a2e;          /* dark, clearly visible */
-  margin-bottom: 7px;
+  color: #1e1e2e;
+  margin-bottom: 8px;
   text-transform: uppercase;
-  letter-spacing: 0.6px;
+  letter-spacing: 1px;
 }
 
 .field input {
   width: 100%;
-  padding: 13px 15px;
-  border: 2px solid #d0d0d0;
-  border-radius: 10px;
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1.5px solid rgba(255, 255, 255, 0.7);
+  border-radius: 12px;
   font-size: 1rem;
-  color: #1a1a2e;          /* dark text in input */
-  background: #f8f9ff;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 500;
+  color: #1a1a2e;
   outline: none;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  transition: all 0.25s ease;
 }
 
 .field input::placeholder {
-  color: #999999;          /* visible placeholder */
+  color: #555577;
+  font-weight: 400;
 }
 
 .field input:focus {
-  border-color: #0f3460;
-  background: #ffffff;
-  box-shadow: 0 0 0 4px rgba(15, 52, 96, 0.12);
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 20px rgba(253, 160, 133, 0.35);
+  transform: translateY(-1px);
 }
 
 .field input.input-error {
-  border-color: #c0392b;
-  background: #fff5f5;
-  box-shadow: 0 0 0 4px rgba(192, 57, 43, 0.1);
+  border-color: #ff4d4d;
+  background: rgba(255, 77, 77, 0.08);
+  box-shadow: 0 0 0 3px rgba(255, 77, 77, 0.18);
 }
 
-/* ---------- Error message ---------- */
+/* ── Error Text ── */
 .error {
-  color: #c0392b;          /* red, clearly visible */
+  color: #b81c1c;
   font-size: 0.82rem;
-  font-weight: 500;
+  font-weight: 600;
   margin-top: 6px;
+  padding-left: 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
-/* ---------- Submit Button ---------- */
+.error::before {
+  content: "⚠";
+  font-size: 0.75rem;
+}
+
+/* ── Submit Button ── */
 .submit-btn {
   width: 100%;
-  padding: 14px;
-  background: linear-gradient(135deg, #0f3460 0%, #533483 100%);
-  color: #ffffff;          /* white text on dark button */
-  border: none;
-  border-radius: 10px;
+  padding: 15px;
+  margin-top: 12px;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 50%, #fda085 100%);
+  color: #ffffff;
+  font-family: 'Outfit', sans-serif;
   font-size: 1.05rem;
   font-weight: 700;
+  letter-spacing: 0.8px;
+  border: none;
+  border-radius: 12px;
   cursor: pointer;
-  margin-top: 10px;
-  letter-spacing: 0.6px;
-  transition: opacity 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
-  box-shadow: 0 4px 20px rgba(15, 52, 96, 0.35);
+  box-shadow: 0 6px 24px rgba(240, 147, 251, 0.45);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
 }
 
 .submit-btn:hover {
-  opacity: 0.92;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(15, 52, 96, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(240, 147, 251, 0.55);
+  filter: brightness(1.05);
 }
 
 .submit-btn:active {
-  transform: translateY(0);
-  box-shadow: 0 3px 12px rgba(15, 52, 96, 0.3);
+  transform: translateY(0px);
+  box-shadow: 0 4px 12px rgba(240, 147, 251, 0.35);
 }
